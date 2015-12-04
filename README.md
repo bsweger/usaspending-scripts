@@ -48,7 +48,7 @@ The script will run and let you know when it's saved the summary file:
 
     Saved 2015 aggregates to data\assistance_totals_2016_20151115.csv
 
-Dollar amounts in the assistance file are summarized by these fields. To see an example of what the file will look like, see [data/assistance_totals_sample.csv](assistance_totals_sample.csv "assistance awards summary sample file").
+Dollar amounts in the assistance file are summarized by these fields. To see an example of what the file will look like, see [data/assistance_totals_sample.csv](data/assistance_totals_sample.csv "assistance awards summary sample file").
 
 * country
 * state
