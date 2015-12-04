@@ -23,8 +23,11 @@ USAspending has federal spending data in two different formats: assistance award
 Assuming that you already have a Python 3 development environment up and running:
 
 1. From the command line, clone the project repository from GitHub to your local environment.
+
         $ git clone git@github.com:bsweger/usaspending-scripts.git
+
 **Note:** If you don't have a GitHub account and want to get a read-only version of the code use this command instead:
+
         $ git clone git://github.com/bsweger/usaspending-scripts.git
 
 2. Change to the project directory: ```cd usaspending-scripts```
