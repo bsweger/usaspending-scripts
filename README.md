@@ -1,6 +1,8 @@
 # USAspending Scripts
 
-This repository contains scripts that download and aggregate U.S. federal spending data from [USAspending.gov](http://www.usaspending.gov "USAspending.gov").
+This repository contains scripts that download and summarize U.S. federal spending data from [USAspending.gov](http://www.usaspending.gov "USAspending.gov").
+
+It creates files that look like this: [data/assistance_totals_sample.csv](data/assistance_totals_sample.csv "assistance awards summary sample file").
 
 ## Background
 
@@ -22,18 +24,10 @@ USAspending has federal spending data in two different formats: assistance award
 
 Assuming that you already have a Python 3 development environment up and running:
 
-1. From the command line, clone the project repository from GitHub to your local environment.
-
-        $ git clone git@github.com:bsweger/usaspending-scripts.git
-
-**Note:** If you don't have a GitHub account and want to get a read-only version of the code use this command instead:
-
-        $ git clone git://github.com/bsweger/usaspending-scripts.git
-
-2. Change to the project directory: ```cd usaspending-scripts```
-2. Install Python dependencies:
-
-        $ pip install -r requirements.txt
+1. From the command line, clone the project repository from GitHub to your local environment: ```git clone git@github.com:bsweger/usaspending-scripts.git```
+2. If you don't have a GitHub account and want to get a read-only version of the code use this command instead: ```fit clone git://github.com/bsweger/usaspending-scripts.git```
+3. Change to the project directory: ```cd usaspending-scripts```
+4. Install Python dependencies: ```pip install -r requirements.txt```
 
 ## Using
 
