@@ -58,4 +58,22 @@ Dollar amounts in the assistance file are summarized by these fields. To see an 
 
 ### Contracts
 
-TODO
+The command for creating a summary of contract awards is:
+
+        $ python usaspending_contracts.py [--output_dir] FISCALYEAR
+
+For example, to download and summarize contract award data for fiscal year 2014 to the folder in this project called *data*:
+
+        $ python usaspending_contracts.py --output_dir=data 2014
+
+The script will run and let you know when it's saved the summary file:
+
+    Saved 2014 aggregates to data\contract_totals_2014_20151115.csv
+
+The output file summarizes contract obligated dollars by the following fields:
+
+* place of performance country
+* place of performance state
+* major agency
+
+To see an example of what the summarized contract file looks like, see [data/contract_totals_sample.csv](data/contract_totals_sample.csv "contract awards summary sample file").
