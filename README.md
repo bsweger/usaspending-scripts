@@ -2,7 +2,11 @@
 
 This repository contains scripts that download and summarize U.S. federal spending data from [USAspending.gov](http://www.usaspending.gov "USAspending.gov").
 
-It creates files that look like this: [data/assistance_totals_sample.csv](data/assistance_totals_sample.csv "assistance awards summary sample file").
+It creates files that look like:
+* [data/assistance_totals_sample.csv](data/assistance_totals_sample.csv "assistance awards summary sample file") (for assistance awards) and
+* [data/contract_totals_sample.csv](data/contract_totals_sample.csv "contract awards summary sample file") (contracts)
+
+These scripts are adapted from my work at [National Priorities Project](https://www.nationalpriorities.org/ "National Priorities Project"). USAspending powers NPP's [State Smart](https://www.nationalpriorities.org/smart/ "State Smart") and [Local Spending Data](https://www.nationalpriorities.org/interactive-data/database/ "Local Spending Data") applications.
 
 ## Background
 
@@ -45,16 +49,25 @@ The script will run and let you know when it's saved the summary file:
 
     Saved 2015 aggregates to data\assistance_totals_2016_20151115.csv
 
-Dollar amounts in the assistance file are summarized by these fields. To see an example of what the file will look like, see [data/assistance_totals_sample.csv](data/assistance_totals_sample.csv "assistance awards summary sample file").
+The output file summarizes these dollar amounts:
+* fed_funding_amount: total federal obligated dollars
+* non_fed_funding_amount: total non-federal funding
+* total funding amount
+* face_loan_guaran: total face value of direct loans or loan guarantees
+* orig_sub_guran: total original subsidy costs of direct loans or guarantees
 
-* country
-* state
-* county
+These dollar amounts are summarized by the fields below:
+
+* recipient country
+* recipient state
+* recipient county
 * catalog of federal domestic assistance number/description
 * agency
 * assistance type
 * assistance category
 * recipient type
+
+To see an example of what the summarized file looks like, see [data/assistance_totals_sample.csv](data/assistance_totals_sample.csv "assistance awards summary sample file")
 
 ### Contracts
 
@@ -70,10 +83,20 @@ The script will run and let you know when it's saved the summary file:
 
     Saved 2014 aggregates to data\contract_totals_2014_20151115.csv
 
-The output file summarizes contract obligated dollars by the following fields:
+The output file summarizes _dollarsobligated_ (dollar amount obligated via contract transactions) by the following fields:
 
 * place of performance country
 * place of performance state
 * major agency
 
 To see an example of what the summarized contract file looks like, see [data/contract_totals_sample.csv](data/contract_totals_sample.csv "contract awards summary sample file").
+
+## More Information and Caveats
+
+Visit [USAspending's data page](https://www.usaspending.gov/about/Pages/TheData.aspx "USAspending data") to learn more about the spending data that's included (and not included) on the website.
+
+A [PDF version of the data dictionary](https://www.usaspending.gov/about/PublishingImages/Pages/TheData/USAspending.gov%20Data%20Dictionary.pdf "USAspending data dictionary").
+
+The spending amounts reported by USAspending represent [obligated dollars](https://www.nationalpriorities.org/budget-basics/federal-budget-101/glossary/#obligations "National Priorities Project Federal Budget Glossary"), not [outlays](https://www.nationalpriorities.org/budget-basics/federal-budget-101/glossary/#outlays "National Priorities Project Federal Budget Glossary").
+
+There are known issues with the data quality on USAspending. That said, this is currently the only place to get a single source of granular federal spending data. The scripts here try to clean up some of the obvious errors and low-hanging fruit. Ultimately, however, there's no script that can fix missing and incorrect information on the site. Thus, the totals in the summary files should match what's reported on USAspending but may not always provide a true picture of U.S. federal spending.
