@@ -1,7 +1,9 @@
+#!/usr/bin/env python
+
 import pandas as pd
 import numpy as np
 import os.path, glob, urllib, csv
-from util import download
+from usaspending.util import download
 from datetime import date
 from pyquery import PyQuery as pq
 import click
