@@ -1,5 +1,8 @@
-pandas
-requests
-pyquery
-click
-us
+pandas==0.19.1
+requests==2.12.1
+pyquery==1.2.9
+click==6.6
+us==0.9.1
+psycopg2==2.6.2
+sqlalchemy==1.1.4
+
