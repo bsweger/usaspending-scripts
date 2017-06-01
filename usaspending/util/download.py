@@ -1,4 +1,7 @@
-import requests, zipfile, os
+import os
+import requests
+import zipfile
+
 
 def download_file(url, filepath):
     '''stream file from url and write to specified location'''
@@ -12,6 +15,7 @@ def download_file(url, filepath):
                 f.flush()
     return (True, filepath)
 
+
 def unzip_file(zipfilepath, dir):
     '''extract zip to specified directory and clean up extracted filenames'''
     filenames = []
@@ -19,7 +23,7 @@ def unzip_file(zipfilepath, dir):
         for name in z.namelist():
             z.extract(name, dir)
             filenames.append(name)
-    #remove legacy path junk from unzipped filenames
+    # remove legacy path junk from unzipped filenames
     for name in filenames:
-        newname = name[name.find('\\')+1:]
+        newname = name[name.find('\\') + 1:]
         os.rename(os.path.join(dir, name), os.path.join(dir, newname))
